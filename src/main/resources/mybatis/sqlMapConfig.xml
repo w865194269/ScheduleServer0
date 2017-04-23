@@ -5,7 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 
 	<typeAliases>
-	 	<typeAlias alias="UserBean" type="com.schedule.beans.User" /> 
-	 </typeAliases> 
-	
+		<typeAlias alias="UserBean" type="com.schedule.beans.User" />
+		<typeAlias alias="TeacherBean" type="com.schedule.beans.Teacher" />
+		<typeAlias alias="CourseBean" type="com.schedule.beans.Course" />
+		<typeAlias alias="CScheduleBean" type="com.schedule.beans.CSchedule" />
+	</typeAliases>
+
 </configuration>

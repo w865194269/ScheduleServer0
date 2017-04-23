@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.schedule.dao.CourseDao">
+	
+	<resultMap type="CourseBean" id="CourseResult">
+		<result column="c_id" property="cId" jdbcType="VARCHAR"/>
+		<result column="c_name" property="name" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="Base_SQL">
+		c_id,c_name 
+	</sql>
+
+</mapper>

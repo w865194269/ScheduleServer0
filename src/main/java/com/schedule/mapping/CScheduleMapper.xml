@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.schedule.dao.CScheduleDao">
+	
+	<resultMap type="CscheduleBean" id="CScheduleResult">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="t_name" property="tName" jdbcType="VARCHAR"/>
+		<result column="s_number" property="number" jdbcType="INTEGER"/>
+		<result column="address" property="address" jdbcType="VARCHAR"/>
+		<result column="section" property="section" jdbcType="VARCHAR"/>
+		<result column="week" property="week" jdbcType="VARCHAR"/>
+		<result column="term" property="term" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<sql id="Base_SQL">
+		 id,t_name,s_number,address,section,week,term
+	</sql>
+
+</mapper>
