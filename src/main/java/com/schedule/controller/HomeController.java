@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.schedule.beans.User;
+import com.schedule.beans.json.JsonObject;
 import com.schedule.service.UserService;
 
 @Controller
@@ -23,20 +24,15 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/test", // url
-			method = RequestMethod.POST, // 请求方法
-			consumes = "application/json", // 请求数据格式
-			produces = "application/json;charset=UTF-8"// 返回数据格式
+	@RequestMapping(value = "/test", 
+			method = RequestMethod.POST, 
+			consumes = "application/json", 
+			produces = "application/json;charset=UTF-8"
 	)
 	@ResponseBody
-	public User test(@RequestBody User user) throws Exception {
-		// if (true) {
-		// throw new BaseException("测试");
-		// }
-		// System.out.println(user);
+	public JsonObject test(@RequestBody User user) throws Exception {
 		user = userService.addUser(user);
-		// System.out.println(user);
-		return user;
+		return new JsonObject(user);
 	}
 
 }

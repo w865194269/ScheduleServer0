@@ -1,10 +1,11 @@
 package com.schedule.beans;
 
-import java.io.Serializable;
 import java.util.Date;
 
+import com.schedule.beans.json.SResult;
 
-public class User implements Serializable{
+
+public class User implements SResult{
 
 
 	private int id;

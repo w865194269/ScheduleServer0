@@ -21,4 +21,12 @@ public class DefaultExceptionResolver {
 		return entity;
 	}
 	
+	@ExceptionHandler(Exception.class)
+	@ResponseBody
+	public ResponseEntity<JsonObject> baseExpection(BaseException e) {
+		ResponseEntity<JsonObject> entity = new ResponseEntity<JsonObject>(e.productJsonObject(),
+				HttpStatus.OK);
+		return entity;
+	}
+	
 }

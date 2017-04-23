@@ -1,6 +1,6 @@
 package com.schedule.beans.json;
 
 
-public interface SYJResult {
+public interface SResult {
 
 }

@@ -8,7 +8,7 @@ public class JsonList {
 	private int code=1;//返回结果码，1表示成功，-1表示失败，此时需要完善msg提示
 	private String msg;
 	
-	private List<SYJResult> result=null;
+	private List<SResult> result=null;
 
 	public int getCode() {
 		return code;
@@ -26,14 +26,14 @@ public class JsonList {
 		this.msg = msg;
 	}
 
-	public List<SYJResult> getResult() {
+	public List<SResult> getResult() {
 		if (this.result==null) {
-			result=new ArrayList<SYJResult>();
+			result=new ArrayList<SResult>();
 		}
 		return result;
 	}
 
-	public void setResult(List<SYJResult> list) {
+	public void setResult(List<SResult> list) {
 		this.result = list;
 	}
 	

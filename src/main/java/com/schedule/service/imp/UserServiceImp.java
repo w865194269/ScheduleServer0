@@ -1,7 +1,9 @@
 package com.schedule.service.imp;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.schedule.beans.User;
@@ -17,19 +19,22 @@ public class UserServiceImp implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public User addUser(User user) throws Exception {
+	public User addUser(User user) throws BaseException {
 		try {
 			userDao.addUser(user);
 			user = userDao.getUser(user);
 		} catch (Exception e) {
-			throw new BaseException(e.getMessage());
-		}	
+			if (e instanceof DuplicateKeyException) {
+				throw new BaseException("用户已存在");
+			} else {
+				throw new BaseException(e.getMessage());
+			}
+		}
 		return user;
 	}
 
 	@Override
 	public User getUser(User user) throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
