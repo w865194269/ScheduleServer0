@@ -21,9 +21,10 @@ public class DefaultExceptionResolver {
 		return entity;
 	}
 	
-	@ExceptionHandler(Exception.class)
+	@ExceptionHandler(Throwable.class)
 	@ResponseBody
-	public ResponseEntity<JsonObject> baseExpection(BaseException e) {
+	public ResponseEntity<JsonObject> baseExpection(Throwable t) {
+		BaseException e=new BaseException(t.getMessage());
 		ResponseEntity<JsonObject> entity = new ResponseEntity<JsonObject>(e.productJsonObject(),
 				HttpStatus.OK);
 		return entity;

@@ -17,16 +17,16 @@ public class LogAspect {
 		logger.info(logStr);
 	}
 
-	public Object logArround(ProceedingJoinPoint point) throws Exception {
+	public Object logArround(ProceedingJoinPoint point) throws Throwable {
 		Object result = null;
 		try {
-			result = point.proceed(point.getArgs());
+			result = point.proceed();
 		} catch (Throwable e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			logStr="方法："+point.getTarget().getClass()+"."+point.getSignature().getName()+"()";
             logStr=logStr+"错误信息如下：["+e+"]";
             logger.error(logStr);
-            throw new Exception(e.getMessage());
+            throw e;
 		}
 		return result;
 	}
@@ -36,4 +36,6 @@ public class LogAspect {
 		logger.info(logStr);
 	}
 
+
+	
 }

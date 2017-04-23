@@ -10,16 +10,17 @@
 	http://www.springframework.org/schema/mvc 
         	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- <bean id="logAspect" class="com.schedule.aspect.LogAspect"></bean>
+	<bean id="logAspect" class="com.schedule.aspect.LogAspect"></bean>
 
 	<aop:config>
 		<aop:aspect ref="logAspect">
-			<aop:pointcut expression="execution(* com.schedule.service.imp.*Imp.*(..))" id="userServicePc"/>
-			<aop:before method="logBefore" pointcut-ref="userServicePc"/>
-			<aop:after method="logAfter" pointcut-ref="userServicePc"/>
-			<aop:around method="logArround" pointcut-ref="userServicePc"/>
+			<aop:pointcut expression="execution(* com.schedule.service.imp.*Imp.*(..))"
+				id="userServicePc" />
+			<aop:before method="logBefore" pointcut-ref="userServicePc" />
+			<aop:after method="logAfter" pointcut-ref="userServicePc" />
+			<aop:around method="logArround" pointcut-ref="userServicePc" />
 		</aop:aspect>
-	</aop:config> -->
+	</aop:config>
 
 
 </beans>

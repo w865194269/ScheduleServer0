@@ -2,8 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.schedule.dao.UserDao">
 	
-	
-	
 	<resultMap type="UserBean" id="UserResult">
 		<id column="id" property="id"  jdbcType="INTEGER"/>
 		<result column="username" property="name" jdbcType="VARCHAR"/>
@@ -18,7 +16,7 @@
 	</sql>
 	
 	<insert id="addUser"  parameterType="UserBean">
-		INSERT INTO T_USER 
+		INSERT INTO t_user 
 		(username,account,email,birthday,password)
 		VALUES
 		(#{name},#{account},#{email},#{birthday},#{password})		
@@ -26,7 +24,7 @@
 	
 	<select id="getUser" parameterType="UserBean" resultMap="UserResult">
 		SELECT <include refid="Base_SQL" />
-		FROM T_USER
+		FROM t_user
 		WHERE account=#{account} 
 		AND 
 		password=#{password}
